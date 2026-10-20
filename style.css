@@ -1,0 +1,405 @@
+/*
+Theme Name: PCWRSAC
+Theme URI: https://github.com/tristan-remple/pcwrsac
+Author: Tristan Remple
+Author URI: https://aqualunae.ca/
+Description: A custom theme for womenscentre.ca
+Version: 1.0.0
+*/
+
+/* BRANDING VARIABLES */
+/* Branding colors, fonts, and background patterns supplied by New Brooklyn Media. */
+
+:root {
+    --contrast-violet: #4A266D;
+    --dark-violet: #582f85;
+    --med-violet: #966aad;
+    --light-violet: #c1a7d0;
+    --pastel-violet: #e0d3e8;
+    --contrast-green: #375426;
+    --dark-green: #557f39;
+    --med-green: #81a56a;
+    --light-green: #b6dcae;
+    --pastel-green: #d8ecd4;
+    --off-black: #232323;
+    --dark-grey: #4f4e4e;
+    --med-grey: #8a8584;
+    --white: #ffffff;
+    --main-font: "Zilla Slab", serif;
+    --alt-font: "Nunito Sans", sans-serif;
+}
+
+.background-violet {
+    background-color: var(--light-violet);
+    background-image: url("assets/lavender-inverse.png");
+}
+
+.background-green {
+    background-color: var(--light-green);
+    background-image: url("assets/green-pattern.png");
+}
+
+a:hover, a:focus {
+    font-style: italic;
+    color: var(--off-black);
+}
+
+.box-white {
+    background-color: var(--white);
+    color: var(--dark-grey);
+    border-color: var(--med-violet);
+}
+
+.box-white h1, .box-white h2, .box-white h3,
+.box-white h4, .box-white h5, .box-white h6 {
+    color: var(--dark-violet);
+}
+
+.box-white a {
+    color: var(--contrast-green);
+}
+
+.box-violet {
+    background-color: var(--pastel-violet);
+    color: var(--off-black);
+    border-color: var(--dark-violet);
+}
+
+.box-violet h1, .box-violet h2, .box-violet h3,
+.box-violet h4, .box-violet h5, .box-violet h6 {
+    color: var(--contrast-violet);
+}
+
+.box-violet a {
+    color: var(--contrast-green);
+}
+
+.box-green {
+    background-color: var(--pastel-green);
+    color: var(--off-black);
+    border-color: var(--dark-green);
+}
+
+.box-green h1, .box-green h2, .box-green h3,
+.box-green h4, .box-green h5, .box-green h6 {
+    color: var(--contrast-green);
+}
+
+.box-green a {
+    color: var(--contrast-violet);
+}
+
+/* CORE */
+
+body {
+    font-family: var(--alt-font);
+}
+
+.text-box {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    max-width: 80%;
+    margin: 2rem auto;
+}
+
+.wp-block-columns, .wp-block-table, .wp-block-embed {
+    margin: 2rem auto;
+    max-width: 80%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--main-font);
+    font-weight: bold;
+}
+
+main {
+    padding-bottom: 3rem;
+}
+
+.no-splash {
+    padding-top: 3rem;
+}
+
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.flex-col {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+/* BUTTONS */
+
+#submit, .wp-element-button {
+    font-family: var(--alt-font);
+    background-color: var(--dark-violet);
+    color: var(--white) !important;
+    border: 1px solid var(--med-violet);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 6rem;
+    text-align: center;
+    margin: auto;
+    font-size: 1rem;
+}
+
+.wp-block-file a {
+    font-size: 1rem;
+}
+
+.wp-block-file .wp-element-button {
+    margin-left: 1rem;
+}
+
+/* CATEGORY PAGES */
+
+.category-post {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.category-heading {
+    text-align: center;
+}
+
+.featured-image {
+    width: 30%;
+    height: auto;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    max-width: 360px;
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto !important;
+}
+
+/* CAROUSELS */
+
+.wpcp-carousel-content-wrapper:has(.wpcp-swiper-dots) {
+    padding-bottom: 6rem;
+    background-color: var(--pastel-green);
+    border-bottom: 1px solid var(--contrast-green);
+}
+
+.wpcp-carousel-section .wpcp-single-item img,
+.wp-post-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 19 / 6;
+    height: auto;
+}
+
+.wpcp-single-item {
+    border: none !important;
+}
+
+/* HEADER */
+
+header {
+    background-color: var(--white);
+    border: none;
+    margin-bottom: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    border-radius: 0;
+}
+
+header a {
+    text-decoration: none;
+}
+
+#logo {
+    height: 250px;
+    margin-right: 2rem;
+}
+
+header h2 {
+    text-align: left;
+}
+
+#header-menu-mobile {
+    display: none;
+}
+
+#header-menu-large {
+    display: flex;
+    border: 1px solid var(--contrast-green);
+    border-width: 1px 0;
+    width: 100%;
+}
+
+/* HEADER BUTTONS AND DROPDOWNS */
+
+.nav-btn {
+    display: flex;
+    flex-grow: 1;
+    padding: 0.5rem;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    width: 8rem;
+    height: auto;
+    font-size: 14px;
+    height: 1.5rem;
+    position: relative;
+}
+
+.nav-btn:not(:last-child)::after {
+    content: "•";
+    position: absolute;
+    right: 0;
+    color: var(--dark-violet);
+}
+
+.dropdown-arrow::after {
+    content: "⧨";
+    padding-left: 0.5rem;
+}
+
+.dropdown {
+    overflow: visible;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    line-height: 1.5rem;
+    color: var(--dark-violet);
+}
+
+.dropdown-header, .dropdown-item {
+    width: 100%;
+    text-align: center;
+}
+
+.dropdown-header {
+    margin-bottom: 0.5rem;
+}
+
+.dropdown-item {
+    display: none;
+    text-decoration: none;
+    z-index: 3;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.nav-btn:hover, .nav-btn:focus,
+.dropdown-item:hover, .dropdown-item:focus {
+    text-decoration: none;
+    background-color: var(--white);
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    display: block;
+    z-index: 4;
+}
+
+.dropdown:hover .dropdown-item, .dropdown:focus .dropdown-item,
+.dropdown-header:hover .dropdown-item, .dropdown-header:focus .dropdown-item {
+    display: block;
+}
+
+/* FOOTER */
+
+footer, footer * {
+    border: none;
+    border-radius: 0;
+}
+
+.foot-menu {
+    height: 8rem;
+    padding: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid var(--contrast-green);
+    border-width: 1px 0;
+}
+
+.foot-menu h3 {
+    max-width: 50%;
+    width: auto;
+}
+
+.foot-text {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    font-size: 12px;
+    margin: 0;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover, footer a:focus {
+    background-color: var(--white);
+}
+
+/* SMALL SCREEN STYLING */
+
+@media screen and (max-width: 800px) {
+    header .flex-col {
+        max-width: 100%;
+    }
+
+    .foot-menu {
+        flex-flow: column nowrap;
+    }
+
+    .foot-menu h3 {
+        max-width: 80%;
+    }
+
+    #header-menu-mobile {
+        display: flex;
+        width: 100%;
+    }
+
+    #header-menu-large {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dropdown {
+        height: auto;
+        background-color: var(--pastel-violet);
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .dropdown-item, .dropdown-header {
+        padding: 0.5rem 0;
+    }
+
+    .text-box p, .text-box .wp-block-columns, .text-box .wp-block-heading, .text-box .wp-block-file, .text-box .wp-block-table, .text-box .wp-block-embed {
+        max-width: 95%;
+    }
+}
