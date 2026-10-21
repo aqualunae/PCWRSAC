@@ -13,6 +13,10 @@ $args = array(
     'numberposts' => -1
 );
 
+if ($category->name == "Staff") {
+    $args['order'] = "ASC";
+}
+
 $posts = get_posts($args);
 
 /**
@@ -67,6 +71,11 @@ function filter_posts_by_tag( array $posts, $tag_slug ) {
     } ) );
 }
 
+$category_tags = get_tags_in_category($id);
+usort( $category_tags, function( $a, $b ) {
+    return strcasecmp( $b->name, $a->name );
+} );
+
 ?>
 
 <main class="background-green no-splash">
@@ -76,21 +85,20 @@ function filter_posts_by_tag( array $posts, $tag_slug ) {
         <?php echo $category->name; ?>
     </h2>
     <p>
-        <?php echo $category->description; ?>
+        <?php echo nl2br($category->description); ?>
     </p>
+    <div class="flex-row">
+    <?php foreach ( $category_tags as $tag ) { ?>
+        <a class="tag-btn" href="#<?php echo $tag->slug; ?>"><?php echo $tag->name; ?></a>
+    <?php } ?>
+    </div>
 </div>
 
-<?php
-
-$category_tags = get_tags_in_category($id);
-usort( $category_tags, function( $a, $b ) {
-    return strcasecmp( $b->name, $a->name );
-} );
-
-if ( ! empty( $category_tags ) ) {
-    foreach ( $category_tags as $tag ) {
+<?php if ( ! empty( $category_tags ) ) { ?>
+    
+    <?php foreach ( $category_tags as $tag ) {
         $tag_posts = filter_posts_by_tag($posts, $tag); ?>
-        <h3 class="text-box box-violet category-heading"><?php echo $tag->name; ?></h3>
+        <h3 class="text-box box-violet category-heading" id="<?php echo $tag->slug; ?>"><?php echo $tag->name; ?></h3>
         <?php
         foreach ( $tag_posts as $post ) {
             $thumbnail_html = get_the_post_thumbnail($post->ID); ?>

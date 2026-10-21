@@ -33,17 +33,23 @@ function filter_posts_by_year($posts, $year) {
         <?php echo $category->name; ?>
     </h2>
     <p>
-        <?php echo $category->description; ?>
+        <?php echo nl2br($category->description); ?>
     </p>
+    <div class="flex-row">
+    <?php for ($year = $last_year; $year >= $first_year; $year--) { 
+        $year_posts = filter_posts_by_year($posts, $year);
+        if ( ! empty( $year_posts ) ) { ?>
+            <a class="tag-btn" href="#<?php echo $year; ?>"><?php echo $year; ?></a>
+        <?php } } ?>
+    </div>
 </div>
 
 <?php
 
-for ($year = $last_year; $year >= $first_year; $year--)
-{ 
+for ($year = $last_year; $year >= $first_year; $year--) { 
     $year_posts = filter_posts_by_year($posts, $year);
     if ( ! empty( $year_posts ) ) { ?>
-    <h3 class="text-box box-violet category-heading"><?php echo $year; ?></h3>
+    <h3 class="text-box box-violet category-heading" id="<?php echo $year; ?>"><?php echo $year; ?></h3>
     <?php foreach ($year_posts as $post) { ?>
         <div class="text-box box-white category-post">
             <?php if ($thumbnail_html) { ?>

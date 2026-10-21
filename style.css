@@ -1,6 +1,6 @@
 /*
 Theme Name: PCWRSAC
-Theme URI: https://github.com/tristan-remple/pcwrsac
+Theme URI: https://github.com/aqualunae/PCWRSAC
 Author: Tristan Remple
 Author URI: https://aqualunae.ca/
 Description: A custom theme for womenscentre.ca
@@ -137,7 +137,7 @@ main {
 
 /* BUTTONS */
 
-#submit, .wp-element-button {
+#submit, .wp-element-button, .tag-btn {
     font-family: var(--alt-font);
     background-color: var(--dark-violet);
     color: var(--white) !important;
@@ -150,12 +150,21 @@ main {
     font-size: 1rem;
 }
 
+.tag-btn {
+    margin: 1rem;
+}
+
 .wp-block-file a {
     font-size: 1rem;
 }
 
 .wp-block-file .wp-element-button {
     margin-left: 1rem;
+}
+
+#submit:hover, .wp-element-button:hover, .tag-btn:hover,
+#submit:focus, .wp-element-button:focus, .tag-btn:focus {
+    background-color: var(--dark-grey);
 }
 
 /* CATEGORY PAGES */
