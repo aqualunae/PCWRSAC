@@ -24,6 +24,8 @@ function filter_posts_by_year($posts, $year) {
     } ) );
 }
 
+$base_url = get_stylesheet_directory_uri();
+
 ?>
 
 <main class="background-green no-splash">
@@ -35,6 +37,10 @@ function filter_posts_by_year($posts, $year) {
     <p>
         <?php echo nl2br($category->description); ?>
     </p>
+    <iframe src="https://embed.styledcalendar.com/#pfYsOnrBYZ0QQpgeqgjy" title="Styled Calendar" class="styled-calendar-container" style="width: 100%; border: none;" data-cy="calendar-embed-iframe"></iframe>
+    <script async type="module" src="https://embed.styledcalendar.com/assets/parent-window.js"></script>
+
+    <h3 class="category-heading">Events Archive</h3>
     <div class="flex-row">
     <?php for ($year = $last_year; $year >= $first_year; $year--) { 
         $year_posts = filter_posts_by_year($posts, $year);

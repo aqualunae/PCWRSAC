@@ -194,6 +194,10 @@ main {
     aspect-ratio: auto !important;
 }
 
+.post-details {
+    width: 100%;
+}
+
 /* CAROUSELS */
 
 .wpcp-carousel-content-wrapper:has(.wpcp-swiper-dots) {
@@ -234,7 +238,8 @@ header a {
 }
 
 #logo {
-    height: 250px;
+    max-height: 250px;
+    max-width: 90%;
     margin-right: 2rem;
 }
 
@@ -410,5 +415,13 @@ footer a:hover, footer a:focus {
 
     .text-box p, .text-box .wp-block-columns, .text-box .wp-block-heading, .text-box .wp-block-file, .text-box .wp-block-table, .text-box .wp-block-embed {
         max-width: 95%;
+    }
+
+    .category-post {
+        flex-flow: column nowrap;
+    }
+
+    .featured-image {
+        width: 100%;
     }
 }

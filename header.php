@@ -79,6 +79,7 @@
                 if (!$d_item["children"]) {
                     echo '<a class="dropdown-item box-violet" href="'.$d_item["url"].'">'.$d_item["title"].'</a>';
                 } else {
+                    echo '<a class="dropdown-item box-violet" href="'.$d_item["url"].'">'.$d_item["title"].'</a>';
                     foreach($d_item["children"] as $child) {
                         echo '<a href="'.$child["url"].'" class="dropdown-item box-violet" tabindex="-1">'.$child["title"].'</a>';
                     }

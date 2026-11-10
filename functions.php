@@ -85,6 +85,11 @@ function pcwc_register_required_plugins() {
             'slug'      => 'wordpress-seo',
             'required'  => false,
         ),
+		array(
+            'name'      => 'Styled Calendar',
+            'slug'      => 'styled-calendar-customized-google-calendars',
+            'required'  => false,
+        ),
     );
 
     $config = array(
